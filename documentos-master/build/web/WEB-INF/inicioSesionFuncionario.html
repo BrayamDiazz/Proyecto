@@ -1,0 +1,93 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>inicio sesion Funcionario</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       <script src="js/libs/jquery-1.9.0/jquery.min.js"></script>
+       <script src="js/libs/jquery-validate-1.10.0/jquery.validate.min.js"></script>
+        <style>
+            .error
+            {
+                color:red
+                    
+            }
+            input.error
+            {
+                background-color: #cccccc
+            }
+           
+           
+            
+        </style> 
+    </head>
+    <body>
+          
+        <table BORDER="3" CELLSPACING="5" WIDTH="370"  align="center" >
+            <TH COLSPAN=2 BGCOLOR="Green"><h1>Digite datos para inicio de sesion</h1></TH>
+            <tr>
+            <td align="center">
+                <form  method="post" id="form1" name="inicioSesion" action="CFuncionario?a=inicio" >
+                    
+                    <br>Numero de documento: <input type="text" name="numeroDocumento" value=""/><br>
+            <br>Contrase&ntildea:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="password" name="clave" value="" /><br>
+            <br><input type="submit" name="aceptar" value="aceptar"/> 
+            
+        </form>
+      
+        </td>
+            </tr>           
+        </table>
+    <script>
+             $("#form1").validate(                
+        
+        {
+    errorLabelContainer:"#messagebox",
+    wrapper:"li",
+         rules:
+                 {
+             
+             numeroDocumento:
+                     {
+                 required: true,
+                 digits:true
+                 
+                 
+            },
+                  
+            
+           
+        clave:{
+            required:true
+        }         
+        },
+        
+                 messages:
+                         {
+                     
+                     numeroDocumento:
+                     {
+                 required: "por favor digite el numero de su documento",
+                 digits:"digite solo numeros"
+            },
+                         
+            
+            clave:
+                     {
+                 required: "por favor digite su clave"
+                 
+            },
+                                    
+                     
+                     }                         
+                         }
+           );
+                          </script>
+    
+    
+    
+    </body>
+</html>

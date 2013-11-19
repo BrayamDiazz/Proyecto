@@ -1,0 +1,128 @@
+
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="js/libs/jquery-1.9.0/jquery.min.js"></script>
+        <script src="js/libs/jquery-validate-1.10.0/jquery.validate.min.js"></script>
+        <title>validacion nuevo funcionario</title>
+    <style>
+            .error
+            {
+                color:red
+                    
+            }
+            input.error
+            {
+                background-color: #cccccc
+            }
+           
+           
+            
+        </style> 
+    </head>
+    <body>
+        <div><marquee><IMG SRC="http://www.policia.gov.co/home_html5/images/escudo_policia_nacional_mono.png" Align="left"></marquee></div>
+        
+        <table BORDER="3" CELLSPACING="5" WIDTH="300"  align="center" >
+            <TH COLSPAN=2 BGCOLOR="Green"><h1>Digite datos nuevo funcionario</h1></TH>
+            <tr>
+            <td align="center">
+                <form  method="post" id="form1" name="funcionario" action="CFuncionario?a=guardar" >
+            <br>Numero de documento: <input type="text" name="numeroDocumento" value=""/><br>
+            <br>Nombre:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="nombre" value="" /><br>
+            <br>Primer Apellido:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="apellidoU" value="" /><br>
+            <br>Segundo Apellido:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="apellidoD" value="" /><br>
+            <br>Clave:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="password" name="clave" value="" /><br>
+            <br><input type="submit" name="aceptar" value="aceptar"/> 
+        </form>
+        
+        </td>
+            </tr>
+            
+        </table>
+    
+     
+     <script>
+             $("#form1").validate(                
+        
+        {
+    errorLabelContainer:"#messagebox",
+    wrapper:"li",
+         rules:
+                 {
+             
+             numeroDocumento:
+                     {
+                 required: true,
+                 
+            },
+                  nombre:
+             {
+         required: true
+             
+            },
+             apellidoU:
+                     {
+                 required: true,
+                 
+            },
+            
+            apellidoD:
+                     {
+                 required: true,
+                 
+            },
+            
+            documen:
+                             {
+                         required: true
+                         },
+             opcion:
+                     {
+                 required: true
+                     },
+                     genero:{
+                         required:true
+                     },
+        clave:{
+            required:true
+        }         
+        },
+        
+                 messages:
+                         {
+                     
+                     numeroDocumento:
+                     {
+                 required: "por favor digite el numero de su documento",
+                 
+            },
+                     nombre:{
+                         required: "por favor digite su nombre",
+                         
+            },
+                     apellidoU:
+                             {
+                         required:"por favor digite su primer apellido"
+                             },
+                             
+                     apellidoD:
+                     {
+                 required: "por favor digite su segundo apellido",
+                 
+            },      
+            
+            clave:
+                     {
+                 required: "por favor digite su clave"
+                 
+            },
+                                    
+                     
+                     }                         
+                         }
+           );
+                          </script>
+                          </body>
+</html>
